@@ -8,16 +8,16 @@ public class Spawner : MonoBehaviour
     public float spawnRate = 1.0f;
     void Start()
     {
-        StartCoroutine(spawnObstacles());
+        StartCoroutine(spawnEnemies());
     }
 
-    IEnumerator spawnObstacles()
+    IEnumerator spawnEnemies()
     {
         Instantiate(prefabToSpawn,this.transform.position,Quaternion.identity);
 
         yield return new WaitForSeconds(spawnRate);
 
-        StartCoroutine(spawnObstacles());
+        StartCoroutine(spawnEnemies());
     }
 
     
