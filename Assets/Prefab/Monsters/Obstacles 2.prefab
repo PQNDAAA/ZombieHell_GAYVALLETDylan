@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5584174046106226617}
   - component: {fileID: 7207516901886755430}
   m_Layer: 0
-  m_Name: Obstacles
+  m_Name: Obstacles 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d7f42e2da43aa943ad3f084af882f2d, type: 2}
+  - {fileID: 2100000, guid: 513e6921d2bc5964cb29cd54d3c93b70, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,6 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294dcba31e649a94abd24e40c79ba10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  direction: {x: 0, y: 0, z: 0}
-  spawner: {fileID: 6666174481625447925, guid: 0929f43e6a2c7e74895139316207e885, type: 3}
+  m_Enemy: {fileID: 11400000, guid: d4b7c1864104b2a449e3a1da4124e696, type: 2}
+  m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}

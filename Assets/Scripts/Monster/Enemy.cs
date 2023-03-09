@@ -6,15 +6,19 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private SO_Enemy m_Enemy;
+    [SerializeField]
+    private SO_MoveTo m_MoveTo;
 
     void Start()
     {
-        CreateEnemy(Random.Range(10000, 105200),10,0.1f,Vector3.forward,"Monster");
+        m_Enemy.direction = Vector3.forward;
+
+        print("Health: " + m_Enemy.health + " Name: " + m_Enemy.enemyName + " Damage: " + m_Enemy.damage + " Speed: " + m_Enemy.speed);
     }
 
     void FixedUpdate()
     {
-        this.transform.position += m_Enemy.direction * m_Enemy.speed;
+      m_MoveTo.MoveTo(this.gameObject, m_Enemy.direction, m_Enemy.speed);
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -25,7 +29,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void CreateEnemy(int health,int damage,float speed,Vector3 direction, string name)
+/*    public void CreateEnemy(int health,int damage,float speed,Vector3 direction, string name)
     {
 
         SO_Enemy enemy = ScriptableObject.CreateInstance<SO_Enemy>();
@@ -40,7 +44,6 @@ public class Enemy : MonoBehaviour
 
         m_Enemy = enemy;
 
-        print("Health: " + enemy.health + " Name: " + enemy.enemyName + " Damage: " + enemy.damage + " Speed: " + enemy.speed);
-    }
+    }*/
 
 }
