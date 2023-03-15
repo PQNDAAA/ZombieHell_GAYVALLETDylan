@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private SO_Projectile m_Projectile;
+    [SerializeField]
+    private SO_MoveTo m_MoveTo;
     void Start()
     {
-        
+        m_Projectile.direction = -Vector3.forward;
+
+        print(m_Projectile.speed);
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        m_MoveTo.MoveTo(this.gameObject, m_Projectile.direction, m_Projectile.speed);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 }
