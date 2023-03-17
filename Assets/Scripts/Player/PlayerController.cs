@@ -3,16 +3,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private SO_Player player;
+    [SerializeField]
+    private SO_PlayersMoveTo m_PlayersMoveTo;
+
     public int currentIndex = -1;
 
-    public int playerSpaceX = 8;
-
     private int playerLocationX = 0;
-
-    public float speed = 2.0f;
-
-    public float lerpDuration = 2f;
-
     Vector3 positionToMoveTo;
     bool movementIsFinished = true;
 
@@ -20,19 +18,21 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();     
+        animator = GetComponent<Animator>();
+
+        print(player.health);
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && currentIndex < 1) // +1
+        if (Input.GetKeyDown(KeyCode.W) && currentIndex < 1 && movementIsFinished) // +1
         {
-            playerLocationX += playerSpaceX;
+            playerLocationX += player.playerSpaceX;
             playerMoveTo("StrafeLeft");
             currentIndex++;
         }
-        if (Input.GetKeyDown(KeyCode.S) && currentIndex > -1) // -1
+        if (Input.GetKeyDown(KeyCode.S) && currentIndex > -1 && movementIsFinished) // -1
         {
-            playerLocationX -= playerSpaceX;
+            playerLocationX -= player.playerSpaceX;
             playerMoveTo("StrafeRight");
             currentIndex--;
         }
@@ -68,13 +68,13 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPosition;
         //IsFinished true
         movementIsFinished = true;
+
         animator.SetBool(anim, false);
     }
     private void playerMoveTo(string direction)
     {
-        positionToMoveTo = new Vector3(playerLocationX, 
-            this.transform.position.y, this.transform.position.z);
-        StartCoroutine(LerpPosition(positionToMoveTo, lerpDuration, direction));
+        positionToMoveTo = m_PlayersMoveTo.MoveTo(this.gameObject, playerLocationX);
+        StartCoroutine(LerpPosition(positionToMoveTo, player.lerpDuration, direction));
     }
 
 }

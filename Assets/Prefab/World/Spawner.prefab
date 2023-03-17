@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabToSpawn:
   - {fileID: 1856768784604816, guid: 437bc5258f543a1459b618a08fa2166b, type: 3}
-  - {fileID: 5599561676559373223, guid: 6ab39de131850244ebe0b494c26c80cc, type: 3}
-  - {fileID: 5599561676559373223, guid: 56c4cffbd6513ab42a88474e71021a93, type: 3}
-  spawnRate: 3
+  - {fileID: 1673068931724576, guid: 68a37c0c2dccadb428fb549d2c550e08, type: 3}
+  - {fileID: 1853314855081812, guid: d6f20f781491a2540b1e01b73fcbfe5e, type: 3}
+  spawnRate: 5.04
   e_EnemyChanceToSpawn: 55

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   direction: {x: -0, y: -0, z: -1}
+  projectileCooldown: 3.06
+  damage: 50

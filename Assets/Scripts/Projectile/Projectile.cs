@@ -11,13 +11,11 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         m_Projectile.direction = -Vector3.forward;
-
-        print(m_Projectile.speed);
     }
 
     void FixedUpdate()
     {
-        m_MoveTo.MoveTo(this.gameObject, m_Projectile.direction, m_Projectile.speed);
+            m_MoveTo.MoveTo(this.gameObject, m_Projectile.direction, m_Projectile.speed);
     }
 
     private void OnCollisionEnter(Collision collision)
