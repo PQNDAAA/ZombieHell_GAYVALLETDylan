@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         SO_Enemy so = ScriptableObject.CreateInstance<SO_Enemy>();
         so.health = Random.Range(450, 1000);
         so.defaultHealth = so.health;
-        so.damage = 20;
+        so.damage = 100;
         so.speed = 0.02f;
         so.enemyName = "Enemy";
 

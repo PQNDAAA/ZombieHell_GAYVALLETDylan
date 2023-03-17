@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -49,6 +50,8 @@ public class PlayerManager : MonoBehaviour
         if (player.health <= 0)
         {
             Destroy(gameObject);
+            Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
         }
             print(player.health);
     }
