@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,20 @@ public class Enemy : MonoBehaviour
     private SO_Enemy m_Enemy;
     [SerializeField]
     private SO_MoveTo m_MoveTo;
+    [SerializeField]
+    private SO_EnemyAttack m_EnemyAttack;
 
     void Start()
     {
+        SO_Enemy so = ScriptableObject.CreateInstance<SO_Enemy>();
+        so.health = Random.Range(450, 1000);
+        so.defaultHealth = so.health;
+        so.damage = 20;
+        so.speed = 0.02f;
+        so.enemyName = "Enemy";
+
+        m_Enemy = so;
+
         m_Enemy.direction = Vector3.forward;
 
         print("Health: " + m_Enemy.health + " Name: " + m_Enemy.enemyName + " Damage: " + m_Enemy.damage + " Speed: " + m_Enemy.speed);
@@ -27,23 +39,22 @@ public class Enemy : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        if(collision.gameObject.tag == "Player")
+        {
+            PlayerManager playerTarget = collision.gameObject.GetComponent<PlayerManager>();
+            m_EnemyAttack.Attack(gameObject, m_Enemy.damage, playerTarget);
+        }
     }
 
-/*    public void CreateEnemy(int health,int damage,float speed,Vector3 direction, string name)
+    public void TakeDamage(int damage)
     {
+        m_Enemy.health -= damage;
+        print(m_Enemy.health);  
 
-        SO_Enemy enemy = ScriptableObject.CreateInstance<SO_Enemy>();
-        enemy.health = health;
-        enemy.defaultHealth = enemy.health;
-        enemy.enemyName = name;
-        enemy.damage = damage;
-        enemy.speed = speed;
-        enemy.direction = direction;
-
-        this.name = enemy.enemyName;
-
-        m_Enemy = enemy;
-
-    }*/
+        if (m_Enemy.health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }

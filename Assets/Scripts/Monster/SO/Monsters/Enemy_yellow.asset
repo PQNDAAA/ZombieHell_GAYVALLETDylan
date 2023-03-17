@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Enemy_yellow
   m_EditorClassIdentifier: 
   defaultHealth: 600
+  defaultDamage: 5
+  defaultSpeed: 0.05
   damage: 5
   health: 600
   speed: 0.05

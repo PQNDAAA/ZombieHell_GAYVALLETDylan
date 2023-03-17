@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6aa9701def7db46895e88c24af36e3, type: 3}
   m_Name: Wizard
   m_EditorClassIdentifier: 
-  health: 150
+  health: 70
   maxHealth: 150
   speed: 2
-  lerpDuration: 3
+  lerpDuration: 1
   playerSpaceX: 8
   indexForms: 1

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Arrow
   m_EditorClassIdentifier: 
   speed: 0.5
-  direction: {x: 0, y: 0, z: -1}
+  direction: {x: -0, y: -0, z: -1}
   projectileCooldown: 1
-  damage: 40
+  damage: 80

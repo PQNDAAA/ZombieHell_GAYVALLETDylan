@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: -5282966104889065535}
   m_Layer: 0
   m_Name: Wizard
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,9 +1018,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178392}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 100
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1066,6 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f083b520f4416444858fc4a78bd02c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 0}
   projectile: {fileID: 7889753221661122566, guid: 93533fa73b35e3e40878c93ae6c4a368, type: 3}
   canThrowProjectile: 1
   m_Projectile: {fileID: 11400000, guid: 0f81ed5f505c3b34697bd1ebba139668, type: 2}

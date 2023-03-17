@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8561e08cf6e13ba47bc48dcff2579c53, type: 3}
-  m_Name: Fireball
+  m_Script: {fileID: 11500000, guid: a15b947b2b4593648a1bc6f230d2dac9, type: 3}
+  m_Name: EnemyAttack
   m_EditorClassIdentifier: 
-  speed: 0.1
-  direction: {x: -0, y: -0, z: -1}
-  projectileCooldown: 2
-  damage: 400

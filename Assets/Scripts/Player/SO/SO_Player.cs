@@ -11,4 +11,10 @@ public class SO_Player : ScriptableObject
     public float lerpDuration;
     public int playerSpaceX;
     public int indexForms;
+
+
+    public void ResetValues()
+    {
+        health = maxHealth;
+    }
 }

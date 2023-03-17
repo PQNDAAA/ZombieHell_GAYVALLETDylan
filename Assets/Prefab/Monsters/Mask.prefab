@@ -1258,8 +1258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294dcba31e649a94abd24e40c79ba10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Enemy: {fileID: 11400000, guid: 81e701d7fa763c245a47687313c1f8d1, type: 2}
+  m_Enemy: {fileID: 0}
   m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}
+  m_EnemyAttack: {fileID: 11400000, guid: 24cc89bfcec2b354bb08cf49e083d110, type: 2}
 --- !u!65 &8507794245248845251
 BoxCollider:
   m_ObjectHideFlags: 0

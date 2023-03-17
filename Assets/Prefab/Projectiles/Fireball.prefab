@@ -4864,6 +4864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Projectile: {fileID: 11400000, guid: 0f81ed5f505c3b34697bd1ebba139668, type: 2}
   m_MoveTo: {fileID: 11400000, guid: cfb4a818a5e43b64f9bd7e464eee2bbf, type: 2}
+  m_PlayerAttack: {fileID: 11400000, guid: 9f65be2cb2a89eb4782f53a8e60dc484, type: 2}
 --- !u!33 &5774651717765122000
 MeshFilter:
   m_ObjectHideFlags: 0

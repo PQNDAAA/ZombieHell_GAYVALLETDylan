@@ -29,13 +29,6 @@ public class PlayerManager : MonoBehaviour
             GenerationPlayerForms(2);
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private void GenerationPlayerForms(int formIndex)
     {
@@ -47,5 +40,21 @@ public class PlayerManager : MonoBehaviour
     public Quaternion PlayerRotation()
     {
         return this.gameObject.transform.rotation;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        player.health -= damage;
+
+        if (player.health <= 0)
+        {
+            Destroy(gameObject);
+        }
+            print(player.health);
+    }
+
+    private void OnDisable()
+    {
+        player.ResetValues();
     }
 }

@@ -147,4 +147,4 @@ MonoBehaviour:
   - {fileID: 1673068931724576, guid: 68a37c0c2dccadb428fb549d2c550e08, type: 3}
   - {fileID: 1853314855081812, guid: d6f20f781491a2540b1e01b73fcbfe5e, type: 3}
   spawnRate: 5.04
-  e_EnemyChanceToSpawn: 55
+  e_EnemyChanceToSpawn: 35

@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
     private SO_Projectile m_Projectile;
     [SerializeField]
     private SO_MoveTo m_MoveTo;
+    [SerializeField]
+    private SO_PlayerAttack m_PlayerAttack;
     void Start()
     {
         m_Projectile.direction = -Vector3.forward;
@@ -22,7 +24,8 @@ public class Projectile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            Enemy enemyTarget = collision.gameObject.GetComponent<Enemy>();
+            m_PlayerAttack.Attack(gameObject, m_Projectile.damage, enemyTarget);
             Destroy(this.gameObject);
         }
     }
