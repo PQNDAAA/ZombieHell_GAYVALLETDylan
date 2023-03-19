@@ -1282,6 +1282,7 @@ GameObject:
   - component: {fileID: 4813657653538055917}
   - component: {fileID: -3794765623059923615}
   - component: {fileID: 7456644491188746803}
+  - component: {fileID: -474850177505007063}
   m_Layer: 0
   m_Name: Fat_Zombie
   m_TagString: Enemy
@@ -1341,9 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294dcba31e649a94abd24e40c79ba10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Enemy: {fileID: 0}
-  m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}
-  m_EnemyAttack: {fileID: 11400000, guid: 24cc89bfcec2b354bb08cf49e083d110, type: 2}
+  m_Enemy: {fileID: 11400000, guid: d4b7c1864104b2a449e3a1da4124e696, type: 2}
 --- !u!54 &-3794765623059923615
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1373,6 +1372,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2836747, y: 2.0804007, z: 1}
   m_Center: {x: -0.004463166, y: 1.0269185, z: 0}
+--- !u!114 &-474850177505007063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853314855081812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3654d1605b1c8864a8e47439e800394c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Enemy: {fileID: 11400000, guid: d4b7c1864104b2a449e3a1da4124e696, type: 2}
+  m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}
+  m_EnemyAttack: {fileID: 11400000, guid: 24cc89bfcec2b354bb08cf49e083d110, type: 2}
+  isDead: 0
+  isAttacking: 0
 --- !u!1 &1866039069110316
 GameObject:
   m_ObjectHideFlags: 0

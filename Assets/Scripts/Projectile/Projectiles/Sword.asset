@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9b8611c248c8d54a86c3d2cea3fdd1c, type: 3}
-  m_Name: Enemy_yellow
+  m_Script: {fileID: 11500000, guid: 8561e08cf6e13ba47bc48dcff2579c53, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  defaultHealth: 600
-  damage: 5
-  health: 600
-  speed: 0.02
-  direction: {x: 0, y: 0, z: 1}
-  enemyName: Yellow
+  speed: 0.3
+  direction: {x: 0, y: 0, z: -1}
+  projectileCooldown: 3.13
+  damage: 200

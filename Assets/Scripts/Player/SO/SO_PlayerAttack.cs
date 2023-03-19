@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Player", menuName = "PlayerAttack")]
 public class SO_PlayerAttack : ScriptableObject
 {
-    public void Attack(GameObject target, int damage, Enemy monsterTarget)
+    public void Attack(GameObject target, int damage, EnemyManager monsterTarget)
     {
         if (target == null)
         {

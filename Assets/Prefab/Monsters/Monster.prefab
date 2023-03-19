@@ -1191,6 +1191,7 @@ GameObject:
   - component: {fileID: -3645828493508830330}
   - component: {fileID: -456290411470730830}
   - component: {fileID: 7481516316578884151}
+  - component: {fileID: -2484220074971061225}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -1266,9 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294dcba31e649a94abd24e40c79ba10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Enemy: {fileID: 0}
-  m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}
-  m_EnemyAttack: {fileID: 11400000, guid: 24cc89bfcec2b354bb08cf49e083d110, type: 2}
+  m_Enemy: {fileID: 11400000, guid: 58a54e7de96921c48971b3a60276ff0a, type: 2}
 --- !u!65 &7481516316578884151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1282,6 +1281,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9200157, y: 1.7776234, z: 1}
   m_Center: {x: 0.011261627, y: 0.90701735, z: 0}
+--- !u!114 &-2484220074971061225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673068931724576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3654d1605b1c8864a8e47439e800394c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Enemy: {fileID: 11400000, guid: 58a54e7de96921c48971b3a60276ff0a, type: 2}
+  m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}
+  m_EnemyAttack: {fileID: 11400000, guid: 24cc89bfcec2b354bb08cf49e083d110, type: 2}
+  isDead: 0
+  isAttacking: 0
+  scoreManager: {fileID: 0}
 --- !u!1 &1676272991604048
 GameObject:
   m_ObjectHideFlags: 0

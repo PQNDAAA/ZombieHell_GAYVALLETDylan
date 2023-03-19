@@ -1183,6 +1183,7 @@ GameObject:
   - component: {fileID: 8993137953953530350}
   - component: {fileID: 6812740156599290453}
   - component: {fileID: 8507794245248845251}
+  - component: {fileID: -8922703576381485909}
   m_Layer: 0
   m_Name: Mask
   m_TagString: Enemy
@@ -1258,9 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294dcba31e649a94abd24e40c79ba10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Enemy: {fileID: 0}
-  m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}
-  m_EnemyAttack: {fileID: 11400000, guid: 24cc89bfcec2b354bb08cf49e083d110, type: 2}
+  m_Enemy: {fileID: 11400000, guid: 81e701d7fa763c245a47687313c1f8d1, type: 2}
 --- !u!65 &8507794245248845251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1274,6 +1273,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.8750913, z: 1}
   m_Center: {x: 0, y: 0.9361278, z: 0}
+--- !u!114 &-8922703576381485909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856768784604816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3654d1605b1c8864a8e47439e800394c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Enemy: {fileID: 11400000, guid: 81e701d7fa763c245a47687313c1f8d1, type: 2}
+  m_MoveTo: {fileID: 11400000, guid: 8a3dc9990ed8b2c43b63fe65c46f9019, type: 2}
+  m_EnemyAttack: {fileID: 11400000, guid: 24cc89bfcec2b354bb08cf49e083d110, type: 2}
+  isDead: 0
+  isAttacking: 0
+  scoreManager: {fileID: 0}
 --- !u!1 &1916356417170308
 GameObject:
   m_ObjectHideFlags: 0

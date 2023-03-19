@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Enemy_purple
   m_EditorClassIdentifier: 
   defaultHealth: 1000
-  defaultDamage: 10
-  defaultSpeed: 0.02
   damage: 10
   health: 1000
   speed: 0.02

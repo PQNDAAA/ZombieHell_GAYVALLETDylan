@@ -1100,9 +1100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  projectile: {fileID: 7889753221661122566, guid: 93533fa73b35e3e40878c93ae6c4a368, type: 3}
+  projectile: {fileID: 171096, guid: 69e678d8e6999bb4fb16643b783a9c57, type: 3}
   canThrowProjectile: 1
-  m_Projectile: {fileID: 11400000, guid: 0f81ed5f505c3b34697bd1ebba139668, type: 2}
+  m_Projectile: {fileID: 11400000, guid: 1968c7c5cdc5b2c4187759c15c02dd4b, type: 2}
 --- !u!1 &184088
 GameObject:
   m_ObjectHideFlags: 0

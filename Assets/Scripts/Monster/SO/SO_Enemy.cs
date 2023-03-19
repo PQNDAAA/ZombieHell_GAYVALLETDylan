@@ -11,4 +11,9 @@ public class SO_Enemy : ScriptableObject
     public float speed;
     public Vector3 direction;
     public string enemyName;
+
+    public void ResetValues()
+    {
+        health = defaultHealth;
+    }
 }

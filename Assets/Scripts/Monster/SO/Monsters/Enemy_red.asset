@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Enemy_red
   m_EditorClassIdentifier: 
   defaultHealth: 800
-  defaultDamage: 20
-  defaultSpeed: 0.02
   damage: 20
   health: 800
   speed: 0.02

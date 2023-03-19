@@ -24,9 +24,11 @@ public class Projectile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Enemy enemyTarget = collision.gameObject.GetComponent<Enemy>();
+            EnemyManager enemyTarget = collision.gameObject.GetComponent<EnemyManager>();
+
             m_PlayerAttack.Attack(gameObject, m_Projectile.damage, enemyTarget);
             Destroy(this.gameObject);
+            
         }
     }
 }
