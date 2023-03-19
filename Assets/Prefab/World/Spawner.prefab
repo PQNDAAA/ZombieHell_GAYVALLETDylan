@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5990475570028353911}
   - component: {fileID: 6011401953012316266}
   - component: {fileID: 4291907277430302026}
-  - component: {fileID: 6714171557090759826}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6714171557090759826
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3145602906260903713}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6666174481625447925
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +95,7 @@ GameObject:
   - component: {fileID: -7625092312911144407}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,10 +128,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b72ac7a77081fb4abe34cd780b678ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabToSpawn:
-  - {fileID: 1856768784604816, guid: 437bc5258f543a1459b618a08fa2166b, type: 3}
-  - {fileID: 1673068931724576, guid: 68a37c0c2dccadb428fb549d2c550e08, type: 3}
-  - {fileID: 1853314855081812, guid: d6f20f781491a2540b1e01b73fcbfe5e, type: 3}
-  - {fileID: 1580797401444486, guid: 65dd1afdabe41f7469a44ac2ba8517ea, type: 3}
-  spawnRate: 5.04
-  e_EnemyChanceToSpawn: 35
+  m_Spawner: {fileID: 11400000, guid: ebcda572d7c5a8e46996d1c95b58a61a, type: 2}
+  pool: {fileID: 0}

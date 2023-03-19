@@ -15,6 +15,6 @@ MonoBehaviour:
   health: 185
   maxHealth: 185
   speed: 2
-  lerpDuration: 3
+  lerpDuration: 2
   playerSpaceX: 8
   indexForms: 3

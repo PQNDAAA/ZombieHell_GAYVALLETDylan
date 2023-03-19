@@ -18,3 +18,4 @@ MonoBehaviour:
   speed: 0.02
   direction: {x: 0, y: 0, z: 1}
   enemyName: Red
+  enemyScore: 75

@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 
     public float seconds = 0;
     public float timerRemaining = 0;
+
     public bool isStart = false;
 
     float totalTimer = 0;
@@ -18,12 +19,12 @@ public class Timer : MonoBehaviour
     {
         timerTxt = GetComponent<TMP_Text>();    
     }
-
     void Update()
     {
         TimerUpdating();    
     }
 
+    //The timer system
     public void TimerUpdating()
     {
         if (isStart)
@@ -39,9 +40,11 @@ public class Timer : MonoBehaviour
                 ResetLoader();
             }
         }
+        //Format text
         timerTxt.text = string.Format("{0:00}", seconds);
     }
 
+    //The loader cycle 
     public void FillLoading()
     {
         timerRemaining -= Time.deltaTime;
@@ -64,6 +67,7 @@ public class Timer : MonoBehaviour
         isStart = true;
         ResetLoader();
     }
+
     public float ResetLoader()
     {
         return loading.fillAmount = 1;

@@ -8,15 +8,17 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private SO_Enemy m_Enemy;
 
-    public float health;
+    public int health;
 
     void Start()
     {
-        print("Health: " + m_Enemy.health + " Name: " + m_Enemy.enemyName + " Damage: " + m_Enemy.damage + " Speed: " + m_Enemy.speed);
+        //Debug test to know the enemy stats 
+       // print("Health: " + m_Enemy.health + " Name: " + m_Enemy.enemyName + " Damage: " + m_Enemy.damage + " Speed: " + m_Enemy.speed);
     }
+
+    //To set the health 
     private void OnEnable()
     {
-        m_Enemy.ResetValues();
         health = m_Enemy.health;
     }
 

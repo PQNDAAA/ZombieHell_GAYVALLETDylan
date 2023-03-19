@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //ScriptableObject
     [SerializeField]
     private SO_Player player;
     [SerializeField]
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private int playerLocationX = 0;
     Vector3 positionToMoveTo;
+    //Boolean to check if the movement is finished
     bool movementIsFinished = true;
 
     Animator animator;
@@ -19,29 +21,32 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-
-        print(player.health);
     }
     void Update()
     {
+        //Top movement
         if (Input.GetKeyDown(KeyCode.W) && currentIndex < 1 && movementIsFinished) // +1
         {
             playerLocationX += player.playerSpaceX;
             playerMoveTo("StrafeLeft");
             currentIndex++;
         }
+        //Bottom movement
         if (Input.GetKeyDown(KeyCode.S) && currentIndex > -1 && movementIsFinished) // -1
         {
             playerLocationX -= player.playerSpaceX;
             playerMoveTo("StrafeRight");
             currentIndex--;
         }
+        //Run movement
         if (Input.GetKeyDown(KeyCode.Z))
         {
             animator.SetBool("Run", true);
         }
     }
 
+    //The smooth movement when the player must go to the new position 
+    //Avoid the basic teleportation effect
     IEnumerator LerpPosition(Vector3 targetPosition, float duration, string anim)
     {
         //isFinished false
@@ -71,6 +76,8 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool(anim, false);
     }
+    //The player goes to the new road with the lerp position 
+    //The "direction" param is the animation
     private void playerMoveTo(string direction)
     {
         positionToMoveTo = m_PlayersMoveTo.MoveTo(this.gameObject, playerLocationX);

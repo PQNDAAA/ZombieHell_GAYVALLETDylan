@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    //ScriptableObject
     [SerializeField]
     private SO_Enemy m_Enemy;
     [SerializeField]
@@ -11,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     private SO_EnemyAttack m_EnemyAttack;
 
+    //Actions in bool's
     public bool isDead = false;
     public bool isAttacking = false;
 
@@ -26,6 +28,7 @@ public class EnemyManager : MonoBehaviour
     }
     void FixedUpdate()
     {
+        //Check if the enemy is dead to stop it 
         if (isDead == false)
         {
             m_MoveTo.MoveTo(this.gameObject, m_Enemy.direction, m_Enemy.speed);
@@ -34,20 +37,36 @@ public class EnemyManager : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        //If the enemy collide with Pool (Base) 
+        //Enemy attacks the base 
         if (collision.gameObject.tag == "Pool")
         {
+            isAttacking = true;
+            BaseManager baseTarget = GameObject.Find("Base").GetComponent<BaseManager>();
+            m_EnemyAttack.Attack(gameObject, m_Enemy.damage, null, baseTarget);
+
+            scoreManager.RemoveScore(baseTarget.removeScore);
+
+            isAttacking = false;
             gameObject.SetActive(false);
         }
+        //If the enemy collide the player 
+       // Attack anim is true and he attacks the player 
         if (collision.gameObject.tag == "Player")
         {
             isAttacking = true;
             animator.SetBool("attack", true);
 
+            StartCoroutine(FalseAttack());
+
             PlayerManager playerTarget = collision.gameObject.GetComponent<PlayerManager>();
-            m_EnemyAttack.Attack(gameObject, m_Enemy.damage, playerTarget);
+            m_EnemyAttack.Attack(gameObject, m_Enemy.damage, playerTarget, null);
+
+            isAttacking = false;
         }
     }
 
+    //Take Damage
     public void TakeDamage(int damage)
     {
         enemy.health -= damage;
@@ -55,19 +74,29 @@ public class EnemyManager : MonoBehaviour
 
         if (enemy.health <= 0)
         {
+            //isDead true and the anim dead is activated 
             isDead = true;
             animator.SetBool("isDead", true);
 
-            scoreManager.AddScore(100);
+            scoreManager.AddScore(m_Enemy.enemyScore);
             scoreManager.IncreaseMultiplier(0.01f);
 
-            StartCoroutine(DestroyAfterDead()); 
+            StartCoroutine(HideAfterDead()); 
         }
     }
 
-    IEnumerator DestroyAfterDead()
+    //To hide the target enemy
+    IEnumerator HideAfterDead()
     {
         yield return new WaitForSeconds(2);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        isDead = false;
+    }
+
+    //To stop the attack anim
+    IEnumerator FalseAttack()
+    {
+        yield return new WaitForSeconds(1f);
+        animator.SetBool("attack", false);
     }
 }
